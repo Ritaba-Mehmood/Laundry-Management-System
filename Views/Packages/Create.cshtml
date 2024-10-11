@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+ @model aptechvision.Models.Package
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";  // Update path if necessary
+    ViewData["Title"] = "Manage Packages";
+}
+ 
+
+<!-- Your Index view content -->
+
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="col-md-6">
+        <div class="border border-dark rounded p-4 bg-light shadow-sm">
+            <h2 class="text-center mb-4">Create Package</h2>
+            <form asp-action="Create">
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label"></label>
+                    <input asp-for="Name" class="form-control" placeholder="Enter package name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label"></label>
+                    <textarea asp-for="Description" class="form-control" rows="4" placeholder="Enter package description"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PricePerKg" class="control-label"></label>
+                    <input asp-for="PricePerKg" class="form-control" placeholder="Enter price per kg" />
+                    <span asp-validation-for="PricePerKg" class="text-danger"></span>
+                </div>
+                <div class="form-group text-center mt-3">
+                    <input type="submit" value="Create" class="btn btn-primary btn-block" />
+                </div>
+            </form>
+            <div class="text-center mt-3">
+                <a asp-action="Index" class="btn btn-link">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>

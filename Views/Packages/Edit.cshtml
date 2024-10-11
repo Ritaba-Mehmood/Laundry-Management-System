@@ -1,0 +1,49 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model aptechvision.Models.Package
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";  // Update path if necessary
+    ViewData["Title"] = "Edit Package";
+}
+ 
+
+<div class="container py-5">
+    <h2 class="text-center mb-4">Edit Package</h2>
+
+    <form asp-action="Edit">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+                <div class="form-group">
+                    <label asp-for="Name" class="control-label">Package Name</label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label">Description</label>
+                    <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PricePerKg" class="control-label">Price per Kg</label>
+                    <input asp-for="PricePerKg" class="form-control" />
+                    <span asp-validation-for="PricePerKg" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="form-group text-center">
+                    <input type="hidden" asp-for="Id" />
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="text-center mt-3">
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>

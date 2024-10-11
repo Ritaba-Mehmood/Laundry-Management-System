@@ -1,0 +1,32 @@
+﻿ @model aptechvision.Models.OrderViewModel
+
+<h2>Cancel Order</h2>
+
+<form asp-action="CancelOrder">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" readonly />
+    </div>
+    <div>
+        <label asp-for="Phone"></label>
+        <input asp-for="Phone" readonly />
+    </div>
+    <div>
+        <label asp-for="PickupDate"></label>
+        <input asp-for="PickupDate" readonly />
+    </div>
+    <div>
+        <label asp-for="Slot"></label>
+        <input asp-for="Slot" readonly />
+    </div>
+    <div>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" readonly />
+    </div>
+    <div>
+        <label asp-for="Address"></label>
+        <input asp-for="Address" readonly />
+    </div>
+    <button type="submit">Confirm Cancellation</button>
+</form>
